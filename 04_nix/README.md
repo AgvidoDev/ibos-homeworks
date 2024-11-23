@@ -13,7 +13,9 @@
 У вас есть фрагмент записи из файла `/etc/shadow`: `hackme:$6$iMDxXB6C.bGVPgP/$dzNU7.0TSuoY8LUBKInul8kkDbjNsTEJWC6ake4pBi9Mf8icvzTm7aydpgs7ciJsRurui/SVBHsKWP0Ji4f7U1:...`.
 
 Подберите пароль к данной учётной записи.
-
+```
+Password: fear
+```
 ### Выполнение
 
 <details>
