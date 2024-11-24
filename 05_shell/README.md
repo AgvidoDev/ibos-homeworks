@@ -26,6 +26,15 @@
 
   **6**  
 
+```bash
+file: script_lear.sh
+code:
+#!/bin/bash
+let M=$1+1
+echo $M
+echo "$1""1"
+
+```
 
 
 ## Задание 2
@@ -39,6 +48,18 @@ admin_scripts**
 **...**  
 **Videos**
 **Total: 22**  
+
+```bash
+file: script_lear2.sh
+
+code:
+#!/bin/bash
+echo "Files in directory"
+ls $1
+echo "Count files directory"
+ls $1 | wc -l
+
+```
 
 
 ## Задание 3
@@ -54,6 +75,26 @@ admin_scripts**
 **user@user:~$ ./test.sh /etc/passwd1**  
 **/etc/passwd1 - not exist**  
 
+
+```bash
+file: script_lear3.sh
+
+code:
+#!/bin/bash
+
+if [ -d $1 ]
+then
+        echo  " $1 directory "
+else
+        if [ -e $1 ]
+                then
+                        echo  "$1 files"
+                else
+                        echo "not exist"
+        fi
+fi
+
+```
 
 ## Задание 4* (необязательное)
 
