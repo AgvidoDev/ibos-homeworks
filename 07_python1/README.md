@@ -19,6 +19,14 @@
 
   **51**
 
+```python
+import sys
+
+e = str(sys.argv[1]) + '1'
+print (e)
+```
+
+
 - второй - прибавляет к параметру единицу как число.
 
   **Например:**
@@ -27,6 +35,12 @@
 
   **6**
 
+```python
+import sys
+
+e = int(sys.argv[1]) + 1
+print (e)
+```
 
 
 ## Задание 2
@@ -40,7 +54,27 @@
 **...**  
 **Videos**  
 **Total: 22**  
+```python
+import os
+import sys
 
+directory = sys.argv[1] if len(sys.argv) > 1 else '.'
+
+if os.path.exists(directory) and os.path.isdir(directory):
+    items = os.listdir(directory)
+    file_count = 0
+    
+    for item in items:
+        item_path = os.path.join(directory, item)
+        if os.path.isfile(item_path):
+            print(item)
+            file_count += 1
+         
+    print(f"Total: {file_count}")
+else:
+    print(f"{directory} - not exist or not a directory")
+
+```
 
 
 ## Задание 3
@@ -56,9 +90,23 @@
 **user@user:~$ c:\windows1**  
 **c:\windows1 - not exist**  
 
+```python
+import sys
+import os
+
+path = sys.argv[1]
+if os.path.exists(path):
+    if os.path.isdir(path):
+        print(f"{path} - Directory")
+    elif os.path.isfile(path):
+        print(f"{path} - file")
+else:
+    print(f"{path} - not exist")
+```
 
 
 ## Задание 4* (необязательное)
+
 
 ### Легенда
 
