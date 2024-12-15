@@ -18,6 +18,12 @@
 
   **51**
 
+```powershell
+$VarUs2=$args[0].ToString()
+$rez = $VarUs2 + '1'
+("$rez")
+```
+
 - второй - прибавляет к параметру единицу как число.
 
   **Например:**
@@ -25,7 +31,10 @@
   **./test_2.ps1 5**
 
   **6**
-
+```powershell
+$VarUs=$args[0]+1
+("$VarUs")
+```
 
 
 ## Задание 2
@@ -40,6 +49,10 @@
 **Videos**  
 **Total: 22**  
 
+```powershell
+Get-ChildItem -Path $args[0] | ForEach-Object { Write-Output $_.Name }
+(Get-ChildItem -Path $args[0] | Where-Object { -not $_.PSIsContainer }).Count
+```
 
 
 ## Задание 3
@@ -55,7 +68,22 @@
 **user@user:~$./test.ps1 c:\windows1**  
 **c:\windows1 - not exist**  
 
+```powershell
+param (
+    [string]$path
+)
+if (Test-Path $path) {
+    if ((Get-Item $path).PSIsContainer) {
+        Write-Output "$path - directory"
+    }
+    else {
+        Write-Output "$path - file"
+    }
+} else {
+    Write-Output "$path - not exist"
+}
 
+```
 
 ## Задание 4* (необязательное)
 
